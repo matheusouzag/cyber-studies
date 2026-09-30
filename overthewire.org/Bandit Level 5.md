@@ -11,3 +11,5 @@ ls , cd , cat , file , du , find
 file -- "* f *" 
 
 Pra pesquisar em todos os files o tipo, logo achando o único legível
+
+6C7h9GD8M6ai5nr7wo1RonrzFjj9yIrG

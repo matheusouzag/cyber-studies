@@ -10,3 +10,13 @@ ls , cd , cat , file , du , find
 ---
 ## Resolução
 
+![](lvl6.png)
+
+find . -executable -readable -print
+
+Tudo que aparece é executável e possível de ler, porém queremos que seja possível de ler para humanos, ou seja: ASCII
+
+ find . -not -executable -type f -exec du -b {} \;
+ls -a
+
+pXa26xhMWaC2SvDotA4r9EgZkulOeSBW

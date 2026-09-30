@@ -13,3 +13,5 @@ Google Search for “spaces in filename”
 
 Quando tem espaço, é necessário o uso de "" para entrar no arquivo.
 cat < "nome do arquivo"
+
+7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME

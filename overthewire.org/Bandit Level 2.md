@@ -12,3 +12,5 @@ Google Search for “spaces in filename”
 ## Resolução
 
 more & cat < pra ler arquivos com caracteres especiais, fazendo o shell redirecionar
+
+PK8fYLZg2hnHSz83plBL1iEPKdD3QToB

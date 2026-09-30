@@ -17,3 +17,5 @@ Passwords also occasionally change. It is recommended to take notes on how to so
 ls = ver os diretórios
 cat = abrir o readme e anotar a senha
 entrar no bandit1 utilizando ssh
+
+6y2kwnwK6grgvwvpvLaa2T1cpFEKOhNR
