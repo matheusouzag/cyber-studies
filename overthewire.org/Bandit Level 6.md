@@ -12,6 +12,7 @@ ls , cd , cat , file , du , find
 
 ![](lvl6.png)
 
+Primeira solução:
 find . -executable -readable -print
 
 Tudo que aparece é executável e possível de ler, porém queremos que seja possível de ler para humanos, ou seja: ASCII
@@ -20,3 +21,11 @@ Tudo que aparece é executável e possível de ler, porém queremos que seja pos
 ls -a
 
 pXa26xhMWaC2SvDotA4r9EgZkulOeSBW
+
+Segunda solução:
+
+find . -not -executable -type f -exec du -b {} \; | grep "1033"
+
+Terceira solução: 
+
+find . -type f -size 1033c -not -executable

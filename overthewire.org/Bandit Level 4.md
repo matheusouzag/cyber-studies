@@ -12,3 +12,4 @@ ls -a = utilizado para ver diretórios também
 cat pra ler
 
 xzTXq1rDJQVVAzdv5cHq1TQytTWufAMq
+
