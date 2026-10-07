@@ -1,0 +1,3299 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 1rem;
+      }
+      ol,
+      ul {
+        margin-bottom: 0in;
+      }
+      table {
+        margin-top: 1rem;
+        border: 1px solid gray;
+        width: 7in;
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > .openTableTextBox__table-header-data {
+        text-align: center;
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0in;
+        text-align: center;
+        line-height: 115%;
+        page-break-after: avoid;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        background: #dbe5f1;
+        padding: 0.5rem;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .openTextBox__textArea-container {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 50%;
+      }
+      .openTableTextBox__fieldset {
+        padding: 5px;
+      }
+      td {
+        margin-top: 3pt;
+        margin-right: 0in;
+        margin-bottom: 3pt;
+        margin-left: 0in;
+        font-size: 10pt;
+        font-family: "Arial", sans-serif;
+        width: 98.85pt;
+        border: solid windowtext 1pt;
+        border-top: none;
+        padding: 0.7pt 5.75pt 0.7pt 5.75pt;
+      }
+      textarea {
+        width: 100%;
+      }
+      .answergray {
+        padding: 0.2rem;
+      }
+
+      .openTableTextBox__widget {
+        margin-top: 6pt;
+        margin-right: 0in;
+        margin-bottom: 6pt;
+        margin-left: 0.25in;
+      }
+
+      .show-answer,
+      .hide-answer {
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .openTextBoxController__button-container {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .openTextBoxController__button-container .btn-text {
+        margin: 10px;
+      }
+
+      .btn-text {
+        border: 0px;
+        padding: 0.5rem 1rem;
+        background-color: #3d692b;
+        color: #fff;
+        border-radius: 0;
+        cursor: pointer;
+      }
+
+      .u-display-none {
+        display: none;
+      }
+      .openTextBox__postText, openTableTextBox__postText {
+        margin-top: 0.5rem;
+      }
+      .edit-comment {
+        display: none;
+      }
+      .js-heading-inner {
+        display: none;
+      }
+      .block__title-inner,
+      .article__title-inner {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+      }
+      h2{
+        font-size: 1.25em;
+      }
+      h3{
+        font-size: 1.125em;
+      }
+      .table
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: solid windowtext 1pt;
+      }
+      table tbody tr th, table thead tr th{
+        border: solid windowtext 1pt;
+        background-color: #d6d8dc;
+      }
+      .openTableTextBox__answerText
+        table
+        > thead
+        > tr
+        > .openTableTextBox__table-header-data {
+        background: #f2dbdb !important;
+      }
+      .command-output > .table-inner > .table-wrapper > .table-widget > table,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > td,
+      .command-output
+        > .table-inner
+        > .table-wrapper
+        > .table-widget
+        > table
+        > tbody
+        > tr
+        > th {
+        border: none !important;
+        text-align: right !important;
+      }
+      .simple-table > .table-inner > .table-wrapper{
+        margin-left: 1.5rem;
+      }
+      .openTextBox__widget {
+        margin-left: 1.5rem;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      .answergray {
+        background-color: #ccc;
+      }
+      .openTableTextBox__widget > .answergray {
+        background-color: #fff !important;
+      }
+      li > ul,ol > li{
+        margin-left: 0px !important;
+      }
+      img {
+        width: 30%;
+        height: auto;
+        margin-top: 1rem;
+        margin-left: 3rem;
+      }
+      
+      .component__title{
+        font-family: inherit;
+        font-size: 1.65em;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .component__body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      .accessibility-completion-indicator{
+        display: none;
+      }
+
+      .check__hidden {
+        display: none;
+      }
+
+      .check__button {
+        border: none;
+        border-radius: 6px !important;
+        background-color: #6abf4b;
+        color: #fff;
+        min-width: 100px;
+        margin: 0.625rem 0;
+        padding: 0.7rem;
+      }
+
+      .check__widget .check__solution .DevConfigGray {
+        background-color: rgb(214,216,220);
+        font-weight: bold;
+      }
+
+      .check-inner .check__widget .check__solution .DevConfigs {
+        margin: 0px;
+        line-height: 115%;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .check__solution  {
+        line-height: 1.5;
+      }
+      .mcq__inner .mcq__widget .mcq__widget-inner {
+        margin-block: 1rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item {
+        display: flex;
+        gap: 0.2rem;
+      }
+      .mcq__inner .mcq__widget .mcq__item .mcq__item-label .mcq__item-text .screenReader-position-text{
+        display: none;
+      }
+      .opentabletextbox-inner .opentabletextBox__widget .openTableTextBox__answerText.answergray {
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox{
+        background-color: transparent;
+      }
+      .openTextBox__inner .openTextBox__widget .answergray.is-graphic-in-openTextBox img{
+        margin-block: 1rem;
+        margin-left: initial;
+      }
+      .component__content .component__body-inner .pageTracer-h4-title-hide {
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        font-size: 0px;
+        color: rgb(var(--neutral-2));
+        font-weight: normal;
+      }
+      .table-inner .table__widget table tr.TableHeading th, .table-inner .table__widget table tr.TableHeading td, .table-inner .table__widget table tr td.TableHeading, .opentabletextbox-table thead tr.TableHeading th, .opentabletextbox-table tbody tr.TableHeading td, .opentabletextbox-table tbody tr td.TableHeading {
+        background-color: #d6d8dc;
+        text-align: center;
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .CMD, .component__content .component__body-inner .CMDOutput, .component__content .component__body-inner .CMDOutput__table{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        margin-inline-start: 30px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      [dir="rtl"] .component__content .component__body-inner .CMDOutput__table span {
+        direction: ltr;
+        display: inline-block;
+      }
+      .openTextBox__inner .openTextBox__widget .CMD, .openTextBox__inner .openTextBox__widget .CMDOutput{
+        margin-top: 4px;
+        margin-inline-end: 0px;
+        margin-bottom: 4px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .openTextBox__inner .openTextBox__widget .DnTbold, .openTextBox__inner .openTextBox__widget .BodyTextL25Bold, .component__content .component__body-inner .BodyTextL25Bold, .component__content .component__body-inner .DnTbold, .table-inner .table__widget table tr .DnTbold {
+        font-weight: bold;
+      }
+      .component__content .component__body-inner .SubStepNum {
+        text-indent: -25.5px;
+        margin-inline-start: 50px;
+      }
+      .component__content .component__body-inner .BodyTextL50 {
+        margin-inline-start: 30px;
+      }
+      .component__content .component__body-inner .Bulletlevel1 {
+        text-indent: -19px;
+        margin-inline-start: 48px;
+      }
+      .component__content .component__body-inner .Bulletlevel2 {
+          text-indent: -19px;
+          margin-inline-start: 72px;
+      }
+      .openTextBox__inner .openTextBox__widget .ReflectionQ, .component__content .component__body-inner .SubStepAlpha {
+          text-indent: -25.5px;
+          margin-inline-start: 30px;
+      }
+    </style>
+
+</head><body><!---->
+            <div class="article b62eab5b-2829-4cac-b551-a89ee2fd2c4e remove-padding-top remove-padding-bottom is-complete ">
+                <div class="article__inner">
+                <div class=" no-adaptive-scroll">
+                    <!--?lit$8432392775$-->
+                        <div class=""> 
+                            <base-view type="article" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="article__header-wrapper remove-padding-top remove-padding-bottom ">
+        <div class="article__header ">
+          <div class="article__header-inner ">
+            <!--?lit$8432392775$-->
+      <div class="article__title ">
+        <!--?lit$8432392775$--><heading-view aria-hidden="true" id="b62eab5b-2829-4cac-b551-a89ee2fd2c4e-heading-view" headingtitle="Laboratório – Instalação de uma máquina virtual em um computador pessoal" modelid="b62eab5b-2829-4cac-b551-a89ee2fd2c4e" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="js-heading is-complete">
+        <div class="js-heading-inner" role="heading" id="article-heading" aria-level="2">
+        <span class="aria-label"> <!--?lit$8432392775$-->Concluída &nbsp;<!--?lit$8432392775$-->Laboratório – Instalação de uma máquina virtual em um computador pessoal</span>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></heading-view>
+        <div tabindex="0" role="heading" class="article__title-inner " aria-level="2">
+          <span class="accessibility-completion-indicator"><!--?lit$8432392775$-->Concluída </span>
+          <!--?lit$8432392775$-->Laboratório – Instalação de uma máquina virtual em um computador pessoal
+        </div>
+      </div>
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                            <div class="block__container " style="">
+                                <!--?lit$8432392775$--><!---->
+                                    <block-view modelid="56112d3c-c28f-4c0c-b2ac-80800e79a344" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 12.5%;"><!---->
+                
+                <div data-socialgoodpulse-id="56112d3c-c28f-4c0c-b2ac-80800e79a344" class="56112d3c-c28f-4c0c-b2ac-80800e79a344 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="56112d3c-c28f-4c0c-b2ac-80800e79a344" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$8432392775$--><!----><text-view modelid="7c524139-f6a4-4827-9665-e8b85ab3d8b9" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="7c524139-f6a4-4827-9665-e8b85ab3d8b9" class="component text 7c524139-f6a4-4827-9665-e8b85ab3d8b9  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+          <div class="component__header-inner text__header-inner">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+      <div class="component__content">
+        <div tabindex="0" class="component__body text__body">
+          <div class="component__body-inner text__body-inner"><!--?lit$8432392775$--><h2>Objetivos</h2> <p class="BodyTextL25Bold">Parte 1: Preparação de um computador para virtualização</p> <p class="BodyTextL25Bold">Parte 2: Importe uma máquina virtual para o inventário do VirtualBox</p> <h2>Histórico/Cenário</h2> <p class="BodyTextL25">Os recursos e a capacidade de computação foram ampliados extraordinariamente nos últimos 10 anos. Uma vantagem de ter processadores multipolares e grandes quantidades de RAM é a capacidade de usar a virtualização. Com a virtualização, um ou vários computadores virtuais podem funcionar em um único computador físico. Os computadores virtuais executados dentro de computadores físicos são chamados de máquinas virtuais. As máquinas virtuais são chamadas normalmente de convidadas (guests), e os computadores físicos costumam ser chamados de hosts. Qualquer pessoa com um computador e um sistema operacional modernos pode executar máquinas virtuais.</p> <p class="BodyTextL25">Um arquivo de imagem de máquina virtual foi criado para você instalar em seu computador. Neste laboratório, você baixará e importará esse arquivo de imagem usando um aplicativo de virtualização de desktop, como VirtualBox.</p> <h2>Recursos necessários</h2> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Computador com um mínimo de 4 GB de RAM e 50 GB de espaço livre em disco alocado para executar máquinas virtuais</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span>Acesso à Internet de alta velocidade para baixar o Oracle VirtualBox e o arquivo de imagem de máquina virtual</p> <p class="BodyTextL25"><b>Nota</b>: O arquivo de imagem tem aproximadamente 2,5 GB e pode expandir até 5 GB quando a máquina virtual estiver funcionando. Embora seja possível excluir o arquivo de imagem após importar a máquina virtual, o requisito de espaço em disco livre de 50 GB é para usuários que decidem manter o arquivo de imagem.</p> <p class="BodyTextL25"><b>Nota</b>: Para instalar e executar as máquinas virtuais de 64 bits em um computador físico de host, o computador precisa ser um sistema de 64 bits e ter a tecnologia de virtualização de hardware ativada em BIOS. Se não conseguir instalar a imagem de máquina virtual, talvez seja necessário reiniciar o computador e entrar no modo de configuração em BIOS, para ativar a tecnologia de virtualização de hardware nas configurações avançadas do sistema.</p> <h2>Instruções</h2> <h2>Parte 1: Preparação de um computador para virtualização</h2> <p class="BodyTextL25">Na Parte 1, você baixará e instalará o software de virtualização de desktop e também baixará um arquivo de imagem que poderá ser usado para concluir os laboratórios durante todo o curso. Para este laboratório, a máquina virtual está executando o Linux.</p> <h3>Etapa 1: Download e Instalação do VirtualBox.</h3> <p class="BodyTextL25">VMware Workstation Player e Oracle VirtualBox são dois programas de virtualização que você pode baixar e instalar para executar o arquivo de imagem. Neste laboratório, você usará o VirtualBox.</p> <p class="SubStepAlpha">a.<span>&nbsp;&nbsp;</span>Navegue até <span class="DnTbold"><a href="https://www.virtualbox.org" target="_blank" style="color:#00bceb;"> https://www.VirtualBox.org/ </a></span>.</p> <p class="SubStepAlpha">b.<span>&nbsp;&nbsp;</span>Escolha e baixe o arquivo de instalação apropriado para o seu sistema operacional.</p> <p class="SubStepAlpha">c.<span>&nbsp;&nbsp;</span>Quando você tiver feito o download do arquivo de instalação do VirtualBox, execute o instalador e aceite as configurações de instalação padrão.</p> <h3>Etapa 2: Baixe o arquivo de imagem da máquina virtual.</h3> <p class="BodyTextL25">O arquivo de imagem foi criado de acordo com o Open Virtualization Format (OVF). O OVF é um padrão aberto para acondicionar e distribuir dispositivos virtuais. Um pacote de OVF tem vários arquivos colocados em um diretório. Esse diretório é distribuído para um pacote de OVA. Esse pacote contém todos os arquivos de OVF necessários para a implantação da máquina virtual. A máquina virtual usada neste laboratório foi exportada de acordo com o padrão de OVF.</p> <p class="BodyTextL25">Clique <a href="https://www.netacad.com/pt/resources/lab-downloads?courseLang=pt-BR" target="_blank">aqui</a> para baixar os arquivos OVA do <b>CSE-LABVM</b> e do <b>Security Workstation</b>.</p> <p class="BodyTextL25"><b>Nota</b>: Esse arquivo tem 5 GB e pode levar mais de uma hora para baixar, dependendo da velocidade da conexão com a Internet.</p> <h2>Parte 2: Importe a máquina virtual para o inventário do VirtualBox</h2> <p class="BodyTextL25">Na Etapa 2, você importará a imagem de máquina virtual para o VirtualBox e a iniciará.</p> <h3>Etapa 1: Importe o arquivo da máquina virtual para o VirtualBox.</h3> <p class="SubStepAlpha">a.<span>&nbsp;&nbsp;</span>Abra o <b>VirtualBox</b>. Clique em <b>File</b><b> &gt; </b><b>Import Appliance...</b> para importar a imagem da máquina virtual.</p> <p class="SubStepAlpha">b.<span>&nbsp;&nbsp;</span>Na janela Appliance to import, especifique o local do arquivo .OVA e clique em Next. Clique em <b>Avançar</b> para continuar.</p> <p class="SubStepAlpha">c.<span>&nbsp;&nbsp;</span>É exibida a janela Aplicar configurações. No campo Pasta base da máquina, clique na seta suspensa e altere o destino selecionando Outro e navegando até uma pasta (você pode usar a pasta Documentos do usuário). Defina a Política de endereço MAC para <b>Gerar novos endereços MAC para todos os adaptadores de rede.</b> Deixe todas as outras configurações pré-definidas. Clique em <b>Importar</b>.</p> <p class="SubStepAlpha">d.<span>&nbsp;&nbsp;</span>Quando o processo de importação for concluído, você verá a nova máquina virtual adicionada ao inventário do VirtualBox no painel esquerdo. Agora a máquina virtual está pronta para ser usada.</p> <h3>Etapa 2: Inicie a máquina virtual e faça login.</h3> <p class="SubStepAlpha">a.<span>&nbsp;&nbsp;</span>No inventário mostrado à esquerda, selecione a máquina virtual que deseja usar. Neste exemplo, você selecionará a máquina virtual <b>CSE-LABVM</b>.</p> <p class="SubStepAlpha">b.<span>&nbsp;&nbsp;</span>Clique no botão <b>Iniciar</b>. É a seta verde localizada na parte superior da janela do aplicativo VirtualBox. Uma nova janela será exibida e o processo de boot da máquina virtual será iniciado.</p> <p class="BodyTextL50"><b>Nota</b>: Se a máquina virtual não iniciar, desative o controlador USB, entrando nas configurações da máquina virtual e desmarcando a configuração do controlador USB em USB, ou acesse a página da Web de download do VirtualBox e instale o Oracle VM VirtualBox Extension Pack.</p> <p class="SubStepAlpha">c.<span>&nbsp;&nbsp;</span>Quando o processo de inicialização estiver concluído, a máquina virtual fará login e carregará a área de trabalho automaticamente. Se precisar de acesso de superusuário a qualquer momento, use as seguintes credenciais para a máquina virtual <b>CSE-LABVM</b>:</p> <p class="SubStepAlpha" style="text-indent:0in">Nome do usuário: <b>cisco</b></p> <p class="SubStepAlpha" style="text-indent:0in">Senha: <b>password</b></p> <p class="BodyTextL25"><b>Nota</b>: A janela que executa a máquina virtual é um computador totalmente diferente do host. Funções como copiar e colar não funcionarão entre as duas sem alterar as configurações padrão no VirtualBox. Observe o teclado e foco do mouse. Ao clicar dentro da janela da máquina virtual, o mouse e o teclado comandarão o sistema operacional convidado. O sistema operacional de host deixará de detectar os toques de tecla ou movimentos do mouse. Pressione a tecla <b>CTRL</b> direita para retornar o foco do teclado e do mouse ao sistema operacional host. </p> <h3>Etapa 3: Familiarize-se com o CSE-LABVM.</h3> <p class="BodyTextL25">A máquina virtual <b>CSE-LABVM</b> que você acabou de instalar é uma das VMs que você usará no curso. Familiarize-se com os ícones da lista abaixo:</p> <p class="Bulletlevel1">Os inicializadores do inicializador estão à esquerda (de cima para baixo):</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span><b>Home do Cisco</b> - diretório inicial para o usuário, <b>Cisco</b></p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span><b>DPI Scanling</b> - comando de atalho para aumentar a resolução</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=<span> &nbsp;&nbsp;&nbsp;</span></span><b>Navegador da Web Firefox</b> - Navegador de Internet</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span><b>jcryptool</b> - ferramenta de criptografia e criptografia</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span><b>Teclado</b> - acesso rápido para alterar o layout do teclado</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span><b>Terminal</b> - acesso à linha de comando</p> <p class="Bulletlevel1"><span style="font-size:7.0pt; line-height:115%;font-family:Webdings">=</span><span>&nbsp;&nbsp;</span><b>Wireshark</b> é um Analisador de protocolos </p> <p class="SubStepAlpha">a.<span>&nbsp;&nbsp;</span>Abra o aplicativo do terminal. Digite o comando <b>ip address</b> no prompt para determinar o endereço IP da máquina virtual.</p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+        </div>
+      </div>
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="876efe1e-6a90-44b4-a934-b6652a28bcd5" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 12.5%;"><!---->
+                
+                <div data-socialgoodpulse-id="876efe1e-6a90-44b4-a934-b6652a28bcd5" class="876efe1e-6a90-44b4-a934-b6652a28bcd5 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="876efe1e-6a90-44b4-a934-b6652a28bcd5" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$8432392775$--><!----><opentextbox-view modelid="94c87f55-ea3f-4e41-a526-0329d0185831" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="94c87f55-ea3f-4e41-a526-0329d0185831" class="component opentextbox 94c87f55-ea3f-4e41-a526-0329d0185831  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="94c87f55-ea3f-4e41-a526-0329d0185831" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+          <div class="component__header-inner openTextBox__header-inner">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$8432392775$--> <div class="openTextBox__preText"><!--?lit$8432392775$--><p class="BodyTextL50">Quais são os endereços IP designados para a máquina virtual?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$8432392775$--><!--?lit$8432392775$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$8432392775$-->
+                      <!--?lit$8432392775$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">As respostas vão variar.A interface de loopback é atribuída a 127.0.0.1/8 e a interface Ethernet a um endereço IP na rede 10.0.2.0/24.15/24 rede.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$8432392775$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$8432392775$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$8432392775$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="8f63f1d0-995d-47eb-8792-8dc89a5415b2" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 12.5%;"><!---->
+                
+                <div data-socialgoodpulse-id="8f63f1d0-995d-47eb-8792-8dc89a5415b2" class="8f63f1d0-995d-47eb-8792-8dc89a5415b2 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="8f63f1d0-995d-47eb-8792-8dc89a5415b2" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$8432392775$--><!----><text-view modelid="7833dd2f-057a-4358-ba7e-bc4203e9b52e" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="7833dd2f-057a-4358-ba7e-bc4203e9b52e" class="component text 7833dd2f-057a-4358-ba7e-bc4203e9b52e  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+          <div class="component__header-inner text__header-inner">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+      <div class="component__content">
+        <div tabindex="0" class="component__body text__body">
+          <div class="component__body-inner text__body-inner"><!--?lit$8432392775$--><p class="SubStepAlpha">b.<span>&nbsp;&nbsp;</span>Localize e inicie o aplicativo do navegador da Web.</p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+        </div>
+      </div>
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="bd94ee84-e79b-4007-a593-ea60f3ef32f6" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 12.5%;"><!---->
+                
+                <div data-socialgoodpulse-id="bd94ee84-e79b-4007-a593-ea60f3ef32f6" class="bd94ee84-e79b-4007-a593-ea60f3ef32f6 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="bd94ee84-e79b-4007-a593-ea60f3ef32f6" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$8432392775$--><!----><opentextbox-view modelid="25d2d3d6-1818-42b3-832d-ab9d22671e33" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="25d2d3d6-1818-42b3-832d-ab9d22671e33" class="component opentextbox 25d2d3d6-1818-42b3-832d-ab9d22671e33  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="25d2d3d6-1818-42b3-832d-ab9d22671e33" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+          <div class="component__header-inner openTextBox__header-inner">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$8432392775$--> <div class="openTextBox__preText"><!--?lit$8432392775$--><p class="BodyTextL50">É possível navegar para seu mecanismo de busca favorito?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$8432392775$--><!--?lit$8432392775$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$8432392775$-->
+                      <!--?lit$8432392775$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Sim</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$8432392775$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$8432392775$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$8432392775$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="f4537e87-6134-4bd4-a735-78d853f75403" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 12.5%;"><!---->
+                
+                <div data-socialgoodpulse-id="f4537e87-6134-4bd4-a735-78d853f75403" class="f4537e87-6134-4bd4-a735-78d853f75403 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="f4537e87-6134-4bd4-a735-78d853f75403" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$8432392775$--><!----><text-view modelid="8bc0c3ef-898c-4736-b14f-a795aa8cd6e0" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="8bc0c3ef-898c-4736-b14f-a795aa8cd6e0" class="component text 8bc0c3ef-898c-4736-b14f-a795aa8cd6e0  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+          <div class="component__header-inner text__header-inner">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+      <div class="component__content">
+        <div tabindex="0" class="component__body text__body">
+          <div class="component__body-inner text__body-inner"><!--?lit$8432392775$--><h3>Etapa 4: Desligar o CSE-LABVM.</h3> <p class="SubStepAlpha">a.<span>&nbsp;&nbsp;</span>Pressione a tecla ctrl direita para liberar o cursor da máquina virtual. Agora acesse o menu na parte superior da janela da máquina virtual e escolha <b>File</b> &gt; <b>Close</b> (Arquivo &gt; Fechar) para fechar a máquina virtual.</p> <h4 class="pageTracer-h4-title-hide">Pergunta:</h4></div>
+        </div>
+      </div>
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="4e9a66a3-5424-40d0-b177-40b28e45af9d" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 12.5%;"><!---->
+                
+                <div data-socialgoodpulse-id="4e9a66a3-5424-40d0-b177-40b28e45af9d" class="4e9a66a3-5424-40d0-b177-40b28e45af9d block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="4e9a66a3-5424-40d0-b177-40b28e45af9d" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$8432392775$--><!----><opentextbox-view modelid="1e88df6f-5fbc-418d-9f48-00522649f1b6" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="1e88df6f-5fbc-418d-9f48-00522649f1b6" class="component opentextbox 1e88df6f-5fbc-418d-9f48-00522649f1b6  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="1e88df6f-5fbc-418d-9f48-00522649f1b6" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+          <div class="component__header-inner openTextBox__header-inner">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$8432392775$--> <div class="openTextBox__preText"><!--?lit$8432392775$--><p class="BodyTextL50">Que opções estão disponíveis?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$8432392775$--><!--?lit$8432392775$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$8432392775$-->
+                      <!--?lit$8432392775$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Salve o estado da máquina, Envie o sinal de desligamento e desligue a máquina</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$8432392775$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$8432392775$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$8432392775$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="37881e69-f58f-4153-8679-f0626666761b" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 12.5%;"><!---->
+                
+                <div data-socialgoodpulse-id="37881e69-f58f-4153-8679-f0626666761b" class="37881e69-f58f-4153-8679-f0626666761b block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="37881e69-f58f-4153-8679-f0626666761b" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$8432392775$--><!----><text-view modelid="38f14bdd-dace-491a-bea1-251e34282655" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="text-inner component__inner">
+            <div class="component__header-container">
+                <div data-socialgoodpulse-id="38f14bdd-dace-491a-bea1-251e34282655" class="component text 38f14bdd-dace-491a-bea1-251e34282655  is-full is-complete  ">
+                    <base-view type="component" lowercase_component="text" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header text__header">
+          <div class="component__header-inner text__header-inner">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+      <div class="component__content">
+        <div tabindex="0" class="component__body text__body">
+          <div class="component__body-inner text__body-inner"><!--?lit$8432392775$--><p class="SubStepAlpha">b.<span>&nbsp;&nbsp;</span>Clique no botão de rádio <b>Save the machine state (Salvar o estado da máquina)</b> e clique em <b>OK</b>. Da próxima vez que iniciar a máquina virtual, você conseguirá retomar o funcionamento do sistema operacional no estado atual.</p> <h3>Etapa 5: Importar e iniciar a máquina virtual do Security Workstation e faça login.</h3> <p class="SubStepAlpha">a.<span>&nbsp;&nbsp;</span>Para importar a <b>Security Workstation</b>, siga os mesmos procedimentos usados para importar o <b>CSE-LABVM.</b></p> <p class="SubStepAlpha">b.<span>&nbsp;&nbsp;</span>No inventário mostrado à esquerda, selecione a <b>Security Workstation.</b></p> <p class="SubStepAlpha">c.<span>&nbsp;&nbsp;</span>Clique no botão <b>Iniciar</b> e o processo de inicialização da máquina virtual será iniciado. </p> <p class="SubStepAlpha">d.<span>&nbsp;&nbsp;</span>Caso receba um erro sobre o adaptador Ethernet, clique em <b>Alterar configurações de rede.</b> Na lista suspensa <b>Nome</b>, escolha o adaptador de rede que o computador está usando para se conectar à Internet e clique em <b>OK.</b></p> <p class="SubStepAlpha">e.<span>&nbsp;&nbsp;</span>Quando solicitado, altere o usuário para <b>analista</b>, digite <b>cyberops</b> como a senha e clique em Fazer <b>login</b>.</p> <h3>Etapa 6: Familiarize-se com a Security Workstation.</h3> <p class="BodyTextL25">A máquina virtual <b>Security Workstation</b> é baseada na distribuição do Arch Linux para que você possa executar uma variedade de serviços com o mínimo de impacto nos recursos da máquina host. Sinta-se à vontade para explorar a VM o quanto quiser. No entanto, essa VM será explorada com mais detalhes em laboratórios posteriores.</p> <h3>Etapa 7: Desligar a estação de trabalho de segurança.</h3> <p class="BodyTextL25">Clique em <b>Arquivo</b>&gt; <b>Fechar</b>, escolha <b>Salvar o estado da máquina</b> e clique em <b>OK</b>. </p> <h2>Reflexão</h2></div>
+        </div>
+      </div>
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                </div>
+            </div>
+        </div>
+
+        <!-- div><div class="component__inner"></div></div -->
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></text-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></block-view>
+                                <!----><!---->
+                                    <block-view modelid="27818150-b442-4396-832e-45f68beaa018" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="block" style="width: 12.5%;"><!---->
+                
+                <div data-socialgoodpulse-id="27818150-b442-4396-832e-45f68beaa018" class="27818150-b442-4396-832e-45f68beaa018 block  is-complete">
+                    <div class="block__inner">    
+                    <base-view type="block" modelid="27818150-b442-4396-832e-45f68beaa018" model="[object Object]" customclass="" lowercase_component="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="block__header-wrapper  ">
+        <div class="block__header ">
+          <div class="block__header-inner ">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                        <div class="component__container">                            
+                                <!--?lit$8432392775$--><!----><opentextbox-view modelid="f8f2aab2-2a1a-4b33-bbc7-2b7c5df35acb" class="is-full" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme" sgpulse-type="component"><!---->
+        <div class="component">
+          <div class="component__inner openTextBox__inner">
+            <div data-socialgoodpulse-id="f8f2aab2-2a1a-4b33-bbc7-2b7c5df35acb" class="component opentextbox f8f2aab2-2a1a-4b33-bbc7-2b7c5df35acb  is-undefined is-complete  ">
+              <div class="component__header-container">
+                <div data-socialgoodpulse-id="f8f2aab2-2a1a-4b33-bbc7-2b7c5df35acb" class="opentabletextbox ">
+                  <base-view type="component" lowercase_component="openTextBox" model="[object Object]" customclass="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+      <div class="component__header-wrapper  ">
+        <div class="component__header openTextBox__header">
+          <div class="component__header-inner openTextBox__header-inner">
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+            <!--?lit$8432392775$-->
+          </div>
+        </div>
+      </div>
+    <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></base-view>
+                </div>
+              </div>
+                  <div class="component__widget openTextBox__widget question-container">
+                      <!--?lit$8432392775$--> <div class="openTextBox__preText"><!--?lit$8432392775$--><p class="BodyTextL25">Quais são as vantagens e as desvantagens de usar uma máquina virtual?</p></div>                         
+      
+                      <div class="openTextBox__textArea-container">
+                          <fieldset class="openTextBox__fieldset" tabindex="0">
+                          <legend class="openTextBox__legend">
+                            <!--?lit$8432392775$--><!--?lit$8432392775$-->Área de Resposta<!--?-->
+                          </legend>
+                          <textarea class="openTextBox__textArea" rows="3" name="answerArea" placeholder="Digite suas respostas aqui." aria-label="Digite suas respostas aqui.">&lt;!----&gt;&lt;!----&gt;</textarea>
+                          </fieldset>
+                      </div>
+                      <div tabindex="0" class="openTextBox__answerText answergray  hide">
+                        <!--?lit$8432392775$-->
+                      <!--?lit$8432392775$--><p class="BodyTextL50Answer"><span class="AnswerGray"><span style=" border:none"><span style="border:none">Com uma máquina virtual, você pode testar novos aplicativos ou sistemas operacionais sem afetar o computador host. Também pode salvar o estado atual da máquina quando fechar a máquina virtual. Caso haja algum problema, você terá a opção de reverter a máquina virtual a um estado salvo anteriormente. Por outro lado, uma máquina virtual exige recursos de hardware do computador host, como espaço em disco rígido, RAM e capacidade de processamento.</span></span></span></p>
+                    </div>
+
+                      <div class="btn__container">                        
+                        <button class="btn-text openTextBox__showButton show-answer show"><!--?lit$8432392775$-->Mostrar resposta</button>     
+                        <button class="btn-text openTextBox__hideButton hide-answer hide"><!--?lit$8432392775$-->Ocultar resposta</button>                    
+                      </div>
+                      <!--?lit$8432392775$--><!--?-->
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+      <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></opentextbox-view><!---->
+                            </div>                     
+                    </div>
+                </div>
+            <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></block-view>
+                                <!---->
+                            </div>
+                        </div>
+                        <!--?lit$8432392775$-->
+                    </div>
+                </div>
+            </div>
+        <sgpluse-opentextboxcontroller-view modelid="" is-touch="false" fullscreen="true" device="large" browser="Chrome" os="windows" dir="ltr" location="page" theme="dark" orientation="landscape" themetype="article-base-theme"><!---->
+            <div class="openTextBoxController__button-container">
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__showButton show-answer show"><!--?lit$8432392775$-->Mostrar todas as respostas</button>    
+                <button tabindex="0" class="btn-text showhidebtn openTextBoxController__hideButton hide-answer hide"><!--?lit$8432392775$-->Ocultar todas as respostas</button>    
+                <button class="btn-text resetbtn openTextBoxController__resetButton"><!--?lit$8432392775$-->Limpar minhas respostas</button>         
+            </div>
+            <!--?lit$8432392775$--><hr>
+            <!--?lit$8432392775$-->
+                <div class="post-text" tabindex="0">
+                    <!--?lit$8432392775$--><span><br><span style=" padding-right: 5px; float: left; font-family: arial; font-size: 12px; ">© 2017 - 2022 Cisco and/or its affiliates. All rights reserved. Cisco Public </span><br></span>
+                </div>
+                   
+        <style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style></sgpluse-opentextboxcontroller-view><style id="customCSS">.reduce-margin-top {
+margin-top: calc(4em / 2) !important;
+}
+
+.remove-top-margin {
+margin-top: 0 !important;
+}
+
+.reduce-padding-top {
+padding-top: calc(4em / 2) !important;
+}
+
+.remove-top-padding {
+padding-top: 0 !important;
+}
+
+.increase-margin-top {
+margin-top: calc(4em * 2) !important;
+}
+
+.increase-padding-top {
+padding-top: calc(4em * 2) !important;
+}
+
+.reduce-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-margin {
+margin-bottom: 0 !important;
+}
+
+.background-color-blue {
+background-color: #0d274d;
+}
+
+.background-color-gray {
+background-color: rgb(var(--background-color-2));
+}
+
+.reduce-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.remove-bottom-padding {
+padding-bottom: 0 !important;
+}
+
+.background-color-white {
+background-color: rgb(var(--background-color-3));
+}
+
+.increase-margin-bottom {
+margin-bottom: calc(4em / 2) !important;
+}
+
+.increase-padding-bottom {
+padding-bottom: calc(4em / 2) !important;
+}
+
+.graphic-component-aside-content {
+display: flex;
+flex-direction: row-reverse;
+}.accordion__item-body-inner.hide_accordion {
+  border: initial;
+}</style><script></script>
+<script>
+    window.addEventListener("load", function () {
+      console.log("loaded");
+      document?.querySelectorAll(".answergray").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.classList.add("u-display-none");
+      });
+      document?.querySelectorAll(".show-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            ?.querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.remove("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+        ele.addEventListener("click", function (e) {
+          e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+          e.currentTarget
+            .closest(".question-container")
+            ?.querySelectorAll(".answergray")
+            .forEach(function (ele) {
+              ele.classList.add("u-display-none");
+            });
+          ele.classList.add("u-display-none");
+        });
+      });
+      let event = new Event("click", {
+        bubbles: true,
+        cancelable: true,
+      });
+      document
+        ?.querySelectorAll(".openTextBoxController__showButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.nextElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document?.querySelectorAll(".show-answer").forEach(function (ele) {
+              ele?.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        ?.querySelectorAll(".openTextBoxController__hideButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            e.currentTarget.previousElementSibling.classList.remove("u-display-none");
+            ele.classList.add("u-display-none");
+            document?.querySelectorAll(".hide-answer").forEach(function (ele) {
+              ele?.dispatchEvent(event);
+            });
+          });
+        });
+
+      document
+        ?.querySelectorAll(".openTextBoxController__resetButton")
+        .forEach(function (ele) {
+          ele.addEventListener("click", function (e) {
+            document?.querySelectorAll("textArea").forEach(function (ele) {
+              ele.value = "";
+            });
+          });
+        });
+
+      document
+      ?.querySelectorAll('textarea')
+      .forEach(function (ele){
+        ele.defaultValue = ele.defaultValue.replace(/<!--.*?-->/g, '');
+      })
+        let checkButtonLabel = "check_button_label_placeHolder";
+        let hideButtonLabel = "hide_button_label_placeHolder";
+        document?.querySelectorAll(".check__button").forEach(function (ele) {
+        let answerBox = document.querySelector(".check__solution")
+        if (!answerBox.classList.contains("check__hidden")) {
+          answerBox.classList.add("check__hidden");
+          ele.innerText = checkButtonLabel;
+        }
+          ele.addEventListener("click", function (e) {
+            if (answerBox.classList.contains("check__hidden")) {
+              answerBox.classList.remove("check__hidden")
+              ele.innerText = hideButtonLabel;
+            } else {
+              answerBox.classList.add("check__hidden")
+              ele.innerText = checkButtonLabel;
+            }
+          })
+        })
+    });
+  </script>
+  </body></html>
