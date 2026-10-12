@@ -1,0 +1,28 @@
+# Ambiente virtual
+.venv/
+venv/
+env/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+
+# Variáveis de ambiente e segredos
+.env
+*.key
+*.pem
+
+# Configurações locais do editor
+.vscode/
+
+# Logs e saídas
+*.log
+
+# Testes / cobertura
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Sistema
+Thumbs.db
+.DS_Store
