@@ -1,0 +1,23 @@
+[
+  {
+    "usuario": "maria.silva",
+    "ip_origem": "192.0.2.15",
+    "data_hora": "2026-10-13T08:15:32-03:00",
+    "tipo_evento": "login",
+    "resultado_autenticacao": "sucesso"
+  },
+  {
+    "usuario": "joao.santos",
+    "ip_origem": "198.51.100.24",
+    "data_hora": "2026-10-13T08:17:04-03:00",
+    "tipo_evento": "login",
+    "resultado_autenticacao": "falha"
+  },
+  {
+    "usuario": "ana.costa",
+    "ip_origem": "203.0.113.8",
+    "data_hora": "2026-10-13T08:20:11-03:00",
+    "tipo_evento": "login",
+    "resultado_autenticacao": "sucesso"
+  }
+]
