@@ -14,3 +14,9 @@ comando tail exibe o fim de um arquivo de texto. Por padrão, o tail exibe as ú
 
 tail -f para monitorar ativamente o conteúdo do arquivo /var/log/syslog:
 
+![](tailf.png)
+
+![](syslog.png)
+
+O Syslog é uma solução padrão para registro em log. Ele usa arquivos de texto simples, mas não tem estrutura. As informações não são centralizadas, e pode ser necessário pesquisar muitas informações não relacionadas para encontrar informações relevantes. O Syslog não fornece uma maneira de separar as mensagens pelos aplicativos relacionados. Além disso, os arquivos de texto simples podem exigir rotação para evitar que se tornem muito grandes. O Journald substituiu os arquivos de log de texto simples por um formato de arquivo especial para mensagens de log. Isso torna mais fácil encontrar mensagens de log relevantes.
+
