@@ -58,7 +58,7 @@ def validar_estrutura(dados):
 def validar_evento(dados):
     erros = []
 
-    chaves_obrigatorias = ['usuario', 'ip_origem', 'data_hora', 'tipo_evento', 'resultado_autenticacao']
+    chaves_obrigatorias = ['usuario', 'ip_origem', 'data_hora', 'tipo_evento', 'resultado_autenticacao', 'justificativa']
     
     for chave in chaves_obrigatorias:
         if chave not in dados:
@@ -104,6 +104,14 @@ def validar_evento(dados):
     elif dados['resultado_autenticacao'] not in ["sucesso", "falha"]:
         erros.append("O campo 'resultado_autenticacao' deve ser 'sucesso' ou 'falha'.")
 
+    if "justificativa" in dados:
+        justificativa = dados["justificativa"]
+
+        if not isinstance(justificativa, str):
+            erros.append("O campo 'justificativa' deve ser uma string.")
+        elif not justificativa.strip():
+            erros.append("O campo 'justificativa' não pode estar vazio.")
+
     return erros
 
 def contar_eventos(retorno):
@@ -127,11 +135,30 @@ def conversao_timezone(retorno):
 
     return
 
+def verificar_falhas(retorno):
+    usuarios_falha = [] 
+    dict_justificativas_falha = {} 
+    dict_contagem_falha = {}
+
+    for usuario in retorno:
+        if usuario["resultado_autenticacao"] == "falha":
+            if usuario["usuario"] not in usuarios_falha:
+                usuarios_falha.append(usuario["usuario"])
+            if usuario["usuario"] not in dict_justificativas_falha:
+                dict_justificativas_falha[usuario["usuario"]] = []
+                dict_contagem_falha[usuario["usuario"]] = 0
+
+            dict_justificativas_falha[usuario["usuario"]].append(usuario["justificativa"])
+            dict_contagem_falha[usuario["usuario"]] = dict_contagem_falha[usuario["usuario"]] + 1
+            #dict_contagem_falha[usuario["usuario"]] = contagem_nova + 1
+
+    return dict_justificativas_falha, dict_contagem_falha
 
 
 if __name__ == "__main__":
     caminho = Path(__file__).parent / "data" / "eventos_autenticacao.json"
     retorno_api = executar_validacao(caminho)
 
-    print(contar_eventos(retorno_api))
-    print(conversao_timezone(retorno_api))
+    #print(contar_eventos(retorno_api))
+    #print(conversao_timezone(retorno_api))
+    print(verificar_falhas(retorno_api))
