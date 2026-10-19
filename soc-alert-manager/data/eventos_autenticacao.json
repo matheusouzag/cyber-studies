@@ -11,7 +11,7 @@
   {
     "usuario": "joao.santos",
     "ip_origem": "198.51.100.24",
-    "data_hora": "2026-10-13T08:17:04-03:00",
+    "data_hora": "2026-10-13T08:33:14-03:00",
     "tipo_evento": "login",
     "resultado_autenticacao": "falha",
     "justificativa": "Tentativa de autenticação malsucedida. Este evento deve ser contabilizado na análise de falhas da conta e do IP de origem."
@@ -27,7 +27,7 @@
   {
     "usuario": "joao.santos",
     "ip_origem": "198.51.100.24",
-    "data_hora": "2026-10-13T08:23:45-03:00",
+    "data_hora": "2026-10-13T08:29:45-03:00",
     "tipo_evento": "login",
     "resultado_autenticacao": "falha",
     "justificativa": "Segunda tentativa de autenticação malsucedida registrada para esta conta e IP de origem. Verificar a frequência das falhas."
@@ -35,7 +35,7 @@
   {
     "usuario": "joao.santos",
     "ip_origem": "198.51.100.24",
-    "data_hora": "2026-10-13T08:24:02-03:00",
+    "data_hora": "2026-10-13T08:30:02-03:00",
     "tipo_evento": "login",
     "resultado_autenticacao": "falha",
     "justificativa": "Terceira tentativa de autenticação malsucedida registrada para esta conta e IP de origem. Monitorar novas tentativas."
@@ -78,6 +78,22 @@
     "data_hora": "2026-10-13T08:30:12-03:00",
     "tipo_evento": "login",
     "resultado_autenticacao": "sucesso",
+    "justificativa": "Autenticação realizada com sucesso após tentativas anteriores malsucedidas. O histórico merece acompanhamento, mas não comprova um ataque."
+  },
+  {
+    "usuario": "joao.santos",
+    "ip_origem": "197.51.100.24",
+    "data_hora": "2026-10-13T08:31:12-03:00",
+    "tipo_evento": "login",
+    "resultado_autenticacao": "falha",
+    "justificativa": "Autenticação realizada com sucesso após tentativas anteriores malsucedidas. O histórico merece acompanhamento, mas não comprova um ataque."
+  },
+  {
+    "usuario": "joao.santos",
+    "ip_origem": "196.51.100.24",
+    "data_hora": "2026-10-13T08:32:12-03:00",
+    "tipo_evento": "login",
+    "resultado_autenticacao": "falha",
     "justificativa": "Autenticação realizada com sucesso após tentativas anteriores malsucedidas. O histórico merece acompanhamento, mas não comprova um ataque."
   }
 ]
