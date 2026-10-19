@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 import ipaddress
 import sys
 
@@ -31,7 +31,6 @@ def executar_validacao(api):
             print(f"  - {erro}")
         sys.exit(1)
     else:
-        print("VALIDAÇÃO SUCESSO: Configuração válida e segura.")
         return dados
 
 def validar_estrutura(dados):
@@ -130,15 +129,17 @@ def contar_eventos(retorno):
     }
 
 def conversao_timezone(retorno):
-    for tempo in retorno:
-        print(datetime.fromisoformat(tempo["data_hora"]))
+    for i, tempo in enumerate(retorno):
+        convertido = datetime.fromisoformat(tempo)
+        retorno[i] = convertido
 
-    return
+    return retorno
 
 def verificar_falhas(retorno):
     usuarios_falha = [] 
     dict_justificativas_falha = {} 
     dict_contagem_falha = {}
+    dict_horario_falha = {}
 
     for usuario in retorno:
         if usuario["resultado_autenticacao"] == "falha":
@@ -146,14 +147,38 @@ def verificar_falhas(retorno):
                 usuarios_falha.append(usuario["usuario"])
             if usuario["usuario"] not in dict_justificativas_falha:
                 dict_justificativas_falha[usuario["usuario"]] = []
+                dict_horario_falha[usuario["usuario"]] = []
                 dict_contagem_falha[usuario["usuario"]] = 0
 
             dict_justificativas_falha[usuario["usuario"]].append(usuario["justificativa"])
+            dict_horario_falha[usuario["usuario"]].append(usuario["data_hora"])
             dict_contagem_falha[usuario["usuario"]] = dict_contagem_falha[usuario["usuario"]] + 1
-            #dict_contagem_falha[usuario["usuario"]] = contagem_nova + 1
 
-    return dict_justificativas_falha, dict_contagem_falha
+    return dict_justificativas_falha, dict_contagem_falha, dict_horario_falha
 
+def investigar_tempo(horario):
+    conversao_timezone(horario)
+    horario.sort(reverse=True)
+
+    diferenca = horario[0] - horario[-1]
+
+    if diferenca >= timedelta(minutes=5):
+        print(diferenca)
+        return False
+    else:
+        return True
+
+
+
+
+def analisar_tempo(usuario, horario):
+    for user, horario in horario.items():
+        if usuario == user:
+            resposta_tempo = investigar_tempo(horario)
+            if resposta_tempo == True:
+                return "5 falhas dentro de 5 minutos"
+            else:
+                return "Não ouve 5 falhas dentro de 5 minutos"
 
 if __name__ == "__main__":
     caminho = Path(__file__).parent / "data" / "eventos_autenticacao.json"
@@ -161,4 +186,11 @@ if __name__ == "__main__":
 
     #print(contar_eventos(retorno_api))
     #print(conversao_timezone(retorno_api))
-    print(verificar_falhas(retorno_api))
+    verificacao = verificar_falhas(retorno_api)
+    horarios_falhas = verificacao[2]
+    #print(horarios_falhas)
+
+    for usuario, falha in verificacao[1].items():
+        if falha >= 5:
+            print(analisar_tempo(usuario, horarios_falhas))
+    
